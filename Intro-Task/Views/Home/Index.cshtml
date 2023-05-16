@@ -1,0 +1,36 @@
+﻿@model Intro_Task.Model.DisplayMealViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/index.css" />
+</head>
+
+
+<body style="position:relative;">
+	<h1>Categories</h1>
+	<p style="color:red;">/home/getmeal/{category}</p>
+	@*<form asp-controller="Home" asp-action="AddMeal">
+		<button  type="button" class="btn btn-primary btn-lg" style="position:absolute; top:10px; right:35px">Add Meal</button>
+	</form>*@
+	<a class="btn" href="/home/addmeal">Add Meal</a>
+	<form>
+
+		<ul class="list-group list-group-flush">
+			@foreach (var item in Model.Categories)
+			{
+				<a href="/home/getmeal/@item" class="list-group-item">@item</a>
+			}
+		</ul>
+	</form>
+
+
+	<script>
+
+	</script>
+</body>
+</html>

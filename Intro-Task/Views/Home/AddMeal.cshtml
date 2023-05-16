@@ -1,0 +1,38 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Intro_Task.Model.AddMealViewModel
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+
+<body>
+
+	<form asp-controller="Home" asp-action="AddMeal" method="post">
+
+		<div class="form-group">
+			<label asp-for="AddedMeal.Id">Meal name</label>
+			<input  asp-for="AddedMeal.Id">
+
+		</div>
+
+		<div class="form-group">
+			<label asp-for="AddedMeal.Name">Meal name</label>
+			<input asp-for="AddedMeal.Name" >
+
+		</div>
+		<div class="form-group">
+			<label asp-for="AddedMeal.Region">Region</label>
+			<input asp-for="AddedMeal.Region" >
+		</div>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+</body>
+</html>

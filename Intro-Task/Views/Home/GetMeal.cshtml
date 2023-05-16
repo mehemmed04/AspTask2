@@ -1,0 +1,33 @@
+﻿@model Intro_Task.Model.DisplayMealViewModel
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<title>Meals</title>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="~/css/getmeal.css"/>
+</head>
+
+
+<body>
+
+
+
+	@foreach (var item in Model.Meals)
+	{
+		<div class="card" style="width: 18rem;position:relative">
+			<a href="/home/getdetailedfood/@item.Name" style="width:100%;height:300px; position:absolute;top:0;"></a>
+			<img class="card-img-top" src="@item.Thumb" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">@item.Name</h5>
+				<p class="card-text">@item.Id</p>
+			</div>
+		</div>
+	}
+</body>
+</html>

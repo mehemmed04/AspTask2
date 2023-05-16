@@ -1,0 +1,50 @@
+﻿@model Intro_Task.Model.DisplayDetailsViewModel
+
+
+
+@{
+	var meal = Model.Meal;
+}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+
+<body>
+
+	<div class="card mb-3">
+		<img class="card-img-top" src="@meal.Thumb" alt="Card image cap" style="height: 400px; object-fit: cover;">
+		<div class="card-body">
+			<h5 class="card-title">@meal.Name (@meal.Region)</h5>
+			<p class="card-text">@meal.Instructions</p>
+			<p class="card-text"><small class="text-muted">@meal.Id</small></p>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">Ingredients</h5>
+
+			@for (int i = 0; i < meal.Ingredients.Count; i++)
+			{
+				<div style="display:flex">
+					<p class="card-text">@meal.Ingredients[i]: </p>
+					<p class="card-text">@meal.Measures[i]</p>
+				</div>
+
+			}
+
+			<p class="card-text"><small class="text-muted">@meal.Tag</small></p>
+		</div>
+	</div>
+
+	<div class="embed-responsive embed-responsive-16by9">
+		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/@meal.VideoId" allowfullscreen></iframe>
+	</div>
+
+</body>
+
+</html>
